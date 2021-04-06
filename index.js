@@ -49,9 +49,9 @@ const ComgatePaymentModule = class ComgatePaymentModule {
       useTest: config.useTest || process.env.USE_TEST || false,
       merchantId: config.merchantId || process.env.MERCHANT_ID,
       apiVersion: config.apiVersion || process.env.API_VERSION || "1.0",
-      currency: config.apiVersion.currency || "CZK",
-      language: config.apiVersion.language || "cs",
-      country: config.apiVersion.country || "CZ",
+      currency: config.currency || "CZK",
+      language: config.language || "cs",
+      country: config.country || "CZ",
     };
 
     configuration.gateUrl = `${
@@ -65,8 +65,6 @@ const ComgatePaymentModule = class ComgatePaymentModule {
     const params = {
       method,
     };
-
-    console.log(data)
 
     if (data) {
       const formData = new FormData();
